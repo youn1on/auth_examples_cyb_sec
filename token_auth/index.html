@@ -126,9 +126,10 @@
         } catch(e) {}
 
         if (token) {
-            axios.get('/', {
+            console.log('Token found: '+token);
+            axios.get('/login', {
                 headers: {
-                    Authorization: token
+                    Authorization: "Bearer " + token
                 }
             }).then((response) => {
                 const { username } = response.data;
